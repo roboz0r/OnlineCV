@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Reraise.fs" />
+    <Compile Include="Extensions.fs" />
+    <Compile Include="Environment.fs" />
+    <Compile Include="Saturn.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+    <PackageReference Include="Giraffe" Version="4.1.0" />
+    <PackageReference Include="MimeTypesMap" Version="1.0.8" />
+    <PackageReference Include="Saturn.AzureFunctions" Version="0.14.1" />
+    <PackageReference Include="Fable.Remoting.Giraffe" Version="4.15.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Thoth.Json.Giraffe" Version="4.3.0" />
+    <!-- <PackageReference Include="Thoth.Json.Net" Version="5.0.0" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="./../../dist/**" CopyToOutputDirectory="PreserveNewest" LinkBase="public\" />
+    <None Include="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <!-- https://stackoverflow.com/a/63753889/14134059  -->
+  <Target Name="RunFunctions">
+    <Exec Command="func start" />
+  </Target>
+</Project>
