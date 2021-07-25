@@ -8,12 +8,13 @@ type Components =
 
     [<ReactComponent>]
     static member Router() =
-        let (currentUrl, updateUrl) = React.useState(Router.currentUrl())
+        let (currentUrl, updateUrl) = React.useState (Router.currentUrl ())
+
         React.router [
             router.onUrlChanged updateUrl
             router.children [
                 match currentUrl with
-                | [ ] -> CV2.CV()
+                | [] -> CV2.CV()
                 | _ -> Html.h1 "Not found"
             ]
         ]

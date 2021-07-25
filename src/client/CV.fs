@@ -3,63 +3,64 @@
 open Feliz
 open Feliz.MaterialUI
 
-let cvBody = 
+let cvBody =
     {|
-        ProfessionalSummary = 
+        ProfessionalSummary =
             [
                 "In the past 10 years, I have worked as a process engineer and recently project manager \
                 in traditional engineering, primarily the oil and gas industry as well as bioprocessing, \
                 specialist laboratory environments and manufacturing. During that time, I have also \
                 actively taught myself programming skills to better serve my engineering tasks and \
                 now wish to transition to software development as a career pursuit."
-                
+
                 "I have experience in many programming languages, from humble VBA scripts \
                 to complete solutions using C# and F#. F# is the language that has captured my passion \
                 recently with its expressiveness and emphasis on the functional paradigm, type safety \
                 and immutability."
-                
+
                 "I am keen to use the multi-disciplinary skills that I bring to develop software solutions \
                 that merge the safety, quality and technical standards associated with the process industry \
                 with the rapid development and scale of the software industry."
-                
+
                 "I have produced Quality Management Systems to achieve ISO 9001 certification and in-house \
                 tools to aid in engineering, project management and business finances. I have also written \
                 engineering design guides and calculation tools for client companies. Such projects suit \
                 my precise, systems-oriented thinking, which I have applied successfully throughout my \
-                career. I have also enjoyed leading small teams and helping my colleagues develop their skills."    
-                
+                career. I have also enjoyed leading small teams and helping my colleagues develop their skills."
+
                 "In my free time I am currently exploring web development technologies using F# and \
                 Azure Functions & CosmosDB to create SPA’s with shared client and server domain logic \
                 in source files."
             ]
-        Education = 
-            [ 
-                "Self-guided education in programming and related technologies (2012 – present):", 
-                    [
-                     ".Net Framework, Core & 5.0 (C# and F#)"
-                     "JavaScript interop (using F# & Fable)"
-                     "ReactJS, WPF and WinForms"
-                     "Azure CosmosDB, SQLite and MSSQL"
-                     "Azure Functions"
-                     "Automated testing using Expecto, NUnit and xUnit"
-                     "Source control using Git"
-                     "VBA and Power Query"
-                     "Some experience with Python, C and JavaScript" ]
+        Education =
+            [
+                "Self-guided education in programming and related technologies (2012 – present):",
+                [
+                    ".Net Framework, Core & 5.0 (C# and F#)"
+                    "JavaScript interop (using F# & Fable)"
+                    "ReactJS, WPF and WinForms"
+                    "Azure CosmosDB, SQLite and MSSQL"
+                    "Azure Functions"
+                    "Automated testing using Expecto, NUnit and xUnit"
+                    "Source control using Git"
+                    "VBA and Power Query"
+                    "Some experience with Python, C and JavaScript"
+                ]
                 "HAZOP Leader Training Course (Orica), 2015", []
                 "Bachelor of Engineering (Chemical - Honours), RMIT University Melbourne, 2012", []
                 "Bachelor of Applied Science (Chemistry), RMIT University Melbourne, 2012", []
             ]
-        EmploymentHistory = 
+        EmploymentHistory =
             [
                 "Vecta Group, Senior Process Engineer, August 2017 to Present"
                 "OGC Engineering, Process Engineer, December 2015 to July 2017"
                 "Amec and CloughAmec, Student/Graduate Process Engineer, September 2010 to July 2015"
             ]
-        SoftwareDev = 
+        SoftwareDev =
             [
                 {|
                     Title = "Document Management System"
-                    Body = 
+                    Body =
                         [
                             "This system utilised Excel as the front end for a multi-user \
                             document management system backed by an SQLite database to be \
@@ -75,7 +76,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Restriction Orifice Sizing"
-                    Body = 
+                    Body =
                         [
                             "This Aspen HYSYS and UniSim Extension allows for the simple \
                             sizing of restriction orifices in both sonic and subsonic gas \
@@ -88,7 +89,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Employee Tracker"
-                    Body = 
+                    Body =
                         [
                             "This online database app was developed to track employee \
                             information using the low-code platform Knack. It was \
@@ -103,7 +104,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Spreadsheet Applications"
-                    Body = 
+                    Body =
                         [
                             "I have developed numerous spreadsheets using Excel, VBA \
                             and Power Query including integration with 3rd party native \
@@ -112,7 +113,7 @@ let cvBody =
                             heterogeneous data sources or engineering design calculations \
                             based on published systems of equations."
                         ]
-                    Bullets = 
+                    Bullets =
                         [
                             "Project performance financial reporting"
                             "Incompressible & Compressible fluid flow"
@@ -127,11 +128,11 @@ let cvBody =
                         ]
                 |}
             ]
-        ProjectExp = 
+        ProjectExp =
             [
                 {|
                     Title = "Viva Energy Australia, Jet Plume Remediation System"
-                    Body = 
+                    Body =
                         [
                             "I was responsible for the project management and process \
                             engineering of the project which involved the EPC of an \
@@ -139,7 +140,7 @@ let cvBody =
                             to remove contamination from the groundwater due to a \
                             hydrocarbon spill. My responsibilities included:"
                         ]
-                    Bullets = 
+                    Bullets =
                         [
                             "Process engineering design of the system"
                             "Approval of other engineering documents"
@@ -150,7 +151,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Cooper Energy, Cooper Energy Management System"
-                    Body = 
+                    Body =
                         [
                             "This project involved a complete overhaul of Cooper’s \
                             corporate management systems including the development \
@@ -165,7 +166,7 @@ let cvBody =
                 |}
                 {|
                     Title = "APA Group, Orbost Gas Plant, Commissioning"
-                    Body = 
+                    Body =
                         [
                             "This project commissioned the newly upgraded facility for \
                             processing the Sole gas field, which included H2S. My \
@@ -178,12 +179,12 @@ let cvBody =
                 |}
                 {|
                     Title = "PPG, Future Paint Facility, FEED"
-                    Body = 
+                    Body =
                         [
                             "This project involved the design of a new water-based paint \
                             facility to support their operations. My responsibilities included:"
                         ]
-                    Bullets = 
+                    Bullets =
                         [
                             "P&ID design and drafting in AutoCAD"
                             "Updating the control system philosophy"
@@ -192,7 +193,7 @@ let cvBody =
                 |}
                 {|
                     Title = "APA Group, Engineering Management Framework 2"
-                    Body = 
+                    Body =
                         [
                             "This project involved the update of APA’s engineering management \
                             framework. I was responsible for preparing a complete suite of \
@@ -202,7 +203,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Quality Assurance System to ISO 9001"
-                    Body = 
+                    Body =
                         [
                             "I assisted with the development of internal procedures and quality \
                             assurance systems to achieve ISO 9001 certification at OGC Engineering and Vecta Group."
@@ -211,7 +212,7 @@ let cvBody =
                 |}
                 {|
                     Title = "Lochard Energy, Iona Gas Plant, SafeX Operating Procedures"
-                    Body = 
+                    Body =
                         [
                             "This project involved rewriting existing operating procedures to match \
                             the current plant operating philosophy. I was responsible for writing and \
@@ -221,7 +222,7 @@ let cvBody =
                     Bullets = []
                 |}
             ]
-        ProjectOthers = 
+        ProjectOthers =
             [
                 "Viva Energy Australia, Newport Terminal Jet Fuel Upgrades"
                 "WestSide Corporation, Moura Development Hydraulic Study"
@@ -237,83 +238,74 @@ let cvBody =
             ]
     |}
 
-
-let professionalSummary = 
+// Reference output
+let professionalSummary =
     Html.div [
         Html.h2 "Professional Summary"
-        yield! (
-            cvBody.ProfessionalSummary
-            |> List.map Html.p
-        )
-        
-    ]
+        yield! (cvBody.ProfessionalSummary |> List.map Html.p)
 
-let education = 
+        ]
+
+let education =
     Html.div [
         Html.h2 "Education"
         Html.ul (
             cvBody.Education
-            |> List.collect (fun (x, y) -> 
-                [
-                    Html.li x
-                    match y with
-                    | [] -> ()
-                    | y -> Html.ul (y |> List.map (Html.li))
-                ])
+            |> List.collect
+                (fun (x, y) ->
+                    [
+                        Html.li x
+                        match y with
+                        | [] -> ()
+                        | y -> Html.ul (y |> List.map (Html.li))
+                    ])
         )
     ]
 
-let employmentHistory = 
+let employmentHistory =
     Html.div [
         Html.h2 "Employment History"
-        (Html.ul (
-            cvBody.EmploymentHistory
-            |> List.map Html.li
-        ))
+        (Html.ul (cvBody.EmploymentHistory |> List.map Html.li))
     ]
 
 
-let softwareDev = 
+let softwareDev =
     Html.div [
         Html.h2 "In-House Software Development"
-        yield! (
-            cvBody.SoftwareDev
-            |> List.collect (fun x -> 
-                [
-                    Html.h3 x.Title
-                    yield! (x.Body |> List.map Html.p)
-                    (Html.ul (x.Bullets |> List.map Html.li) )
-                ]
-            )
-        )
+        yield!
+            (cvBody.SoftwareDev
+             |> List.collect
+                 (fun x ->
+                     [
+                         Html.h3 x.Title
+                         yield! (x.Body |> List.map Html.p)
+                         (Html.ul (x.Bullets |> List.map Html.li))
+                     ]))
     ]
 
-let projectExp = 
-    Html.div [ 
+let projectExp =
+    Html.div [
         Html.h2 "Project Experience"
-        yield! (
-            cvBody.ProjectExp
-            |> List.collect (fun x -> 
-                [
-                    Html.h3 x.Title
-                    yield! (x.Body |> List.map Html.p)
-                    (Html.ul (x.Bullets |> List.map Html.li) )
-                ]
-            )
-        )
-        
-    ]
+        yield!
+            (cvBody.ProjectExp
+             |> List.collect
+                 (fun x ->
+                     [
+                         Html.h3 x.Title
+                         yield! (x.Body |> List.map Html.p)
+                         (Html.ul (x.Bullets |> List.map Html.li))
+                     ]))
 
-let otherProjects = 
+        ]
+
+let otherProjects =
     Html.div [
         Html.h2 "Many Other Projects"
-        Html.ul (
-            cvBody.ProjectOthers |> List.map Html.h3
-        )
+        Html.ul (cvBody.ProjectOthers |> List.map Html.h3)
     ]
 
 [<ReactComponent>]
-let CV() = 
+let CV () =
     Html.div [
         Html.h1 "Robert Lenders"
         professionalSummary

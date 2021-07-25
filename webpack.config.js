@@ -28,7 +28,7 @@ var CONFIG = {
     devServerProxy: {
         '/**': {
             // assuming the suave server is running on port 8083
-            target: "http://localhost:5000",
+            target: "http://localhost:7071",
             changeOrigin: true
         }
     },
