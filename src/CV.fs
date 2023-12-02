@@ -1,44 +1,46 @@
-﻿module CV
+module CV
 
-open Feliz
-open Feliz.MaterialUI
+type SoftwareDev =
+    {
+        Title: string
+        Url: string option
+        Body: string list
+        Bullets: string list
+    }
+
+type ProjectExp =
+    {
+        Title: string
+        Body: string list
+        Bullets: string list
+    }
+
+type CVBody =
+    {
+        ProfessionalSummary: string list
+        Education: (string * string list) list
+        EmploymentHistory: string list
+        SoftwareDev: SoftwareDev list
+        ProjectExp: ProjectExp list
+        ProjectOthers: string list
+    }
 
 let cvBody =
-    {|
+    {
         ProfessionalSummary =
             [
-                "In the past 10 years, I have worked as a process engineer and recently project manager \
-                in traditional engineering, primarily the oil and gas industry as well as bioprocessing, \
-                specialist laboratory environments and manufacturing. During that time, I have also \
-                actively taught myself programming skills to better serve my engineering tasks and \
-                now wish to transition to software development as a career pursuit."
-
-                "I have experience in many programming languages, from humble VBA scripts \
-                to complete solutions using C# and F#. F# is the language that has captured my passion \
-                recently with its expressiveness and emphasis on the functional paradigm, type safety \
-                and immutability."
-
-                "I am keen to use the multi-disciplinary skills that I bring to develop software solutions \
-                that merge the safety, quality and technical standards associated with the process industry \
-                with the rapid development and scale of the software industry."
-
-                "I have produced Quality Management Systems to achieve ISO 9001 certification and in-house \
-                tools to aid in engineering, project management and business finances. I have also written \
-                engineering design guides and calculation tools for client companies. Such projects suit \
-                my precise, systems-oriented thinking, which I have applied successfully throughout my \
-                career. I have also enjoyed leading small teams and helping my colleagues develop their skills."
-
-                "In my free time I am currently exploring web development technologies using F# and \
-                Azure Functions & CosmosDB to create SPA’s with shared client and server domain logic \
-                in source files."
+                "With over 10 years of process engineering experience, I have worked on Concept, FEED, Detailed Design, and Commissioning projects in the oil and gas industry. I have also provided Concept and FEED engineering services in bioprocessing, specialist laboratory environments, and manufacturing."
+                "In addition to being a skilled and passionate engineer, I am an experienced software developer with a focus on F# due to its expressiveness and emphasis on the functional programming paradigm, type safety, and immutability. With an aim to improve the tools available to engineers and other professionals, I created the Sharp Cells add-in for Excel which tightly integrates F# as a powerful scripting language for custom functions and commands in Excel."
+                "I am keen to use the multi-disciplinary skills that I bring to develop software solutions that merge the safety, quality, and technical standards associated with the process industry with the rapid development and scale of the software industry."
+                "I have produced Quality Management Systems to achieve ISO 9001 certification and in-house tools to aid in engineering, project management, and business finances. I have also written engineering design guides and calculation tools for client companies. Such projects suit my precise, systems-oriented thinking, which I have applied successfully throughout my career. I have also enjoyed leading small teams and helping my colleagues develop their skills."
             ]
         Education =
             [
-                "Self-guided education in programming and related technologies (2012 – present):",
+                "Self-guided education in software development and related technologies (2012 – present):",
                 [
-                    ".Net Framework, Core & 5.0 (C# and F#)"
+                    ".NET Framework, Core & 5+ (C# and F#)"
                     "JavaScript interop (using F# & Fable)"
-                    "ReactJS, WPF and WinForms"
+                    "Lit, ReactJS, WPF and WinForms"
                     "Azure CosmosDB, SQLite and MSSQL"
                     "Azure Functions"
                     "Automated testing using Expecto, NUnit and xUnit"
@@ -52,17 +54,39 @@ let cvBody =
             ]
         EmploymentHistory =
             [
-                "Vecta Group, Senior Process Engineer, August 2017 to Present"
-                "OGC Engineering, Process Engineer, December 2015 to July 2017"
-                "Amec and CloughAmec, Student/Graduate Process Engineer, September 2010 to July 2015"
+                "Oehm Automation, Senior Software Engineer, Oct 2023 to Present"
+                "Sharp Cells, Founder and Principal Software Engineer, Sep 2022 to Present"
+                "Primacy Technology, Senior Software Developer, Feb 2022 to Sep 2022"
+                "Vecta Group, Senior Process Engineer, Aug 2017 to Feb 2022"
+                "OGC Engineering, Process Engineer, Dec 2015 to Jul 2017"
+                "Amec and CloughAmec, Student/Graduate Process Engineer, Sep 2010 to Jul 2015"
             ]
         SoftwareDev =
             [
-                {|
-                    Title = "Document Management System"
+                {
+                    Title = "Sharp Cells"
+                    Url = Some "https://www.sharpcells.com"
                     Body =
                         [
-                            "This system utilised Excel as the front end for a multi-user \
+                            "Sharp Cells is an xll-based Excel add-in that allows users to write custom \
+                            functions and commands in F# and other .NET languages. It is a \
+                            commercial product that I developed and maintain. It is written in F#."
+                        ]
+                    Bullets =
+                        [
+                            "Integrates F# as a scripting language for Excel"
+                            "Interop between Excel's C and COM APIs and a user's F# scripts"
+                            "Supports creating UDFs connected to real-time data sources"
+                            "Engaged with users and potential users to understand their needs, adding features and fixing bugs as required"
+                            "Integrated with APIs to manage identity and licensing"
+                        ]
+                }
+                {
+                    Title = "Document Management System"
+                    Url = None
+                    Body =
+                        [
+                            "This program used Excel as the front end for a multi-user \
                             document management system backed by an SQLite database to be \
                             run on our internal local network. I implemented a three-way \
                             data validation and merge system to allow multiple users to \
@@ -73,9 +97,10 @@ let cvBody =
                             Graph API. All code was written in F#."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "Restriction Orifice Sizing"
+                    Url = None
                     Body =
                         [
                             "This Aspen HYSYS and UniSim Extension allows for the simple \
@@ -86,9 +111,10 @@ let cvBody =
                             written using C# and the COM interop features of Aspen HYSYS."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "Employee Tracker"
+                    Url = None
                     Body =
                         [
                             "This online database app was developed to track employee \
@@ -101,9 +127,10 @@ let cvBody =
                             using Azure Functions."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "Spreadsheet Applications"
+                    Url = None
                     Body =
                         [
                             "I have developed numerous spreadsheets using Excel, VBA \
@@ -126,11 +153,11 @@ let cvBody =
                             "Pump sizing"
                             "3-Phase property calculation leveraging Aspen Properties"
                         ]
-                |}
+                }
             ]
         ProjectExp =
             [
-                {|
+                {
                     Title = "Viva Energy Australia, Jet Plume Remediation System"
                     Body =
                         [
@@ -148,8 +175,8 @@ let cvBody =
                             "Procurement of materials and subcontractors"
                             "Cost control and reporting"
                         ]
-                |}
-                {|
+                }
+                {
                     Title = "Cooper Energy, Cooper Energy Management System"
                     Body =
                         [
@@ -163,8 +190,8 @@ let cvBody =
                             management, work management and OHS."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "APA Group, Orbost Gas Plant, Commissioning"
                     Body =
                         [
@@ -176,8 +203,8 @@ let cvBody =
                             construction, pre-commissioning and other operations activities."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "PPG, Future Paint Facility, FEED"
                     Body =
                         [
@@ -190,8 +217,8 @@ let cvBody =
                             "Updating the control system philosophy"
                             "Performing equipment sizing"
                         ]
-                |}
-                {|
+                }
+                {
                     Title = "APA Group, Engineering Management Framework 2"
                     Body =
                         [
@@ -200,8 +227,8 @@ let cvBody =
                             process engineering design standards and validated standard calculation tools."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "Quality Assurance System to ISO 9001"
                     Body =
                         [
@@ -209,8 +236,8 @@ let cvBody =
                             assurance systems to achieve ISO 9001 certification at OGC Engineering and Vecta Group."
                         ]
                     Bullets = []
-                |}
-                {|
+                }
+                {
                     Title = "Lochard Energy, Iona Gas Plant, SafeX Operating Procedures"
                     Body =
                         [
@@ -220,7 +247,7 @@ let cvBody =
                             team to fill gaps in the existing operations documents."
                         ]
                     Bullets = []
-                |}
+                }
             ]
         ProjectOthers =
             [
@@ -236,82 +263,165 @@ let cvBody =
                 "Wasco Australia, Compression and Safety Systems"
                 "QGC, QCLNG Upstream Facilities- Produced Water Network"
             ]
-    |}
+    }
 
-// Reference output
+
+type Model =
+    {
+        Content: CVBody
+    }
+
+let init () =
+    {
+        Content = cvBody
+    }
+
+type Msg = unit
+
+let update (msg: Msg) (model: Model) = model
+
+open Lit
+
 let professionalSummary =
-    Html.div [
-        Html.h2 "Professional Summary"
-        yield! (cvBody.ProfessionalSummary |> List.map Html.p)
+    html
+        $"""
+        <div>
+            <h2>Professional Summary</h2>
+            {cvBody.ProfessionalSummary |> List.map (fun x -> html $"<p>{x}</p>")}
+        </div>
+    """
 
-        ]
+let inline private p content : TemplateResult = html $"<p>{content}</p>"
+
+let inline private li content : TemplateResult = html $"<li>{content}</li>"
+
+let inline private ul content : TemplateResult = html $"<ul>{content}</ul>"
 
 let education =
-    Html.div [
-        Html.h2 "Education"
-        Html.ul (
-            cvBody.Education
-            |> List.collect
-                (fun (x, y) ->
-                    [
-                        Html.li x
-                        match y with
-                        | [] -> ()
-                        | y -> Html.ul (y |> List.map (Html.li))
-                    ])
-        )
-    ]
+    html
+        $"""
+        <div>
+            <h2>Education</h2>
+            <ul>
+                {cvBody.Education
+                 |> List.map (fun (x, y) ->
+                     [
+                         li x
+                         match y with
+                         | [] -> ()
+                         | y -> ul (y |> List.map li)
+                     ])}
+            </ul>
+        </div>
+    """
 
 let employmentHistory =
-    Html.div [
-        Html.h2 "Employment History"
-        (Html.ul (cvBody.EmploymentHistory |> List.map Html.li))
-    ]
+    html
+        $"""
+        <div>
+            <h2>Employment History</h2>
+            <ul>
+                {cvBody.EmploymentHistory |> List.map li}
+            </ul>
+        </div>
+    """
 
+let softwareDevItem (tabIndex: int) (x: SoftwareDev)  =
+    html
+        $"""
+    <div tabindex="{tabIndex}" class="collapse collapse-arrow m-2 p-2 rounded-lg border-2 border-sky-900">
+        <div class="collapse-title text-xl font-medium">
+            <span>{x.Title}</span>
+            {match x.Url with
+             | Some url -> html $"<span class=\"pl-8\"><a href={url} target=\"_blank\">{url}</a></span>"
+             | None -> Lit.nothing}
+        </div>
+        <div class="collapse-content"> 
+            {x.Body |> List.map p}
+            <ul>{x.Bullets |> List.map li}</ul>
+        </div>
+    </div>
+    """
 
-let softwareDev =
-    Html.div [
-        Html.h2 "In-House Software Development"
-        yield!
-            (cvBody.SoftwareDev
-             |> List.collect
-                 (fun x ->
-                     [
-                         Html.h3 x.Title
-                         yield! (x.Body |> List.map Html.p)
-                         (Html.ul (x.Bullets |> List.map Html.li))
-                     ]))
-    ]
+let softwareDev model dispatch =
+    html
+        $"""
+        <h2>Software Development</h2>
+        <div class="">
+            {model.SoftwareDev |> List.mapi softwareDevItem}
+        </div>
+    """
 
-let projectExp =
-    Html.div [
-        Html.h2 "Project Experience"
-        yield!
-            (cvBody.ProjectExp
-             |> List.collect
-                 (fun x ->
-                     [
-                         Html.h3 x.Title
-                         yield! (x.Body |> List.map Html.p)
-                         (Html.ul (x.Bullets |> List.map Html.li))
-                     ]))
+let projectExpItem (tabIndex: int) (x: ProjectExp) =
+    html
+        $"""
+    <div tabindex="{tabIndex}" class="collapse collapse-arrow m-2 p-2 rounded-lg border-2 border-sky-900">
+        <div class="collapse-title text-xl font-medium">
+            <span>{x.Title}</span>
+        </div>
+        <div class="collapse-content"> 
+            {x.Body |> List.map p}
+            <ul>{x.Bullets |> List.map li}</ul>
+        </div>
+    </div>
+    """
 
-        ]
+let projectExp model dispatch =
+    let offset = model.SoftwareDev |> List.length
+    html
+        $"""
+        <h2>Engineering Project Experience</h2>
+        <div class="">
+            {model.ProjectExp |> List.mapi (fun i x -> projectExpItem (i + offset) x)}
+        </div>
+    """
 
 let otherProjects =
-    Html.div [
-        Html.h2 "Many Other Projects"
-        Html.ul (cvBody.ProjectOthers |> List.map Html.h3)
-    ]
+    html
+        $"""
+        <div>
+            <h2>Many Other Projects</h2>
+            <ul>
+                {cvBody.ProjectOthers |> List.map li}
+            </ul>
+        </div>
+    """
 
-[<ReactComponent>]
-let CV () =
-    Html.div [
-        Html.h1 "Robert Lenders"
-        professionalSummary
-        education
-        employmentHistory
-        softwareDev
-        projectExp
-        otherProjects
-    ]
+let hmr = HMR.createToken ()
+
+let proseClasses = 
+    [
+        "prose"
+        "prose-slate"
+        "prose-code:font-mono"
+        "prose-code:font-semibold"
+        "prose-code:before:content-['']" // Remove unnecessary backticks
+        "prose-code:after:content-['']"
+        "prose-img:border"
+        "prose-img:border-solid"
+        "prose-img:border-slate-500"
+        "prose-pre:border"
+        "prose-pre:border-solid"
+        "prose-pre:border-slate-500"
+        "prose-a:text-anchor"
+        "max-w-3xl"
+        "text-large"
+        "p-3 xl:p-6"
+        "min-w-0"
+    ] |> Lit.classes
+
+[<HookComponent>]
+let view (model: Model) (dispatch: Msg -> unit) =
+    Hook.useHmr (hmr)
+
+    html
+        $"""
+        <article class="{proseClasses}">
+            {professionalSummary}
+            {education}
+            {employmentHistory}
+            {softwareDev model.Content dispatch}
+            {projectExp model.Content dispatch}
+            {otherProjects}
+        </article>
+    """

@@ -1,43 +1,61 @@
-# Feliz Template
+# Online CV of Robert Lenders
 
-This template gets you up and running with a simple web app using [Fable](http://fable.io/), [Elmish](https://fable-elmish.github.io/) and [Feliz](https://github.com/Zaid-Ajaj/Feliz).
+This repo holds the source code for [www.robertlenders.com](https://www.robertlenders.com/)
 
-## Requirements
+## Prerequisites
 
-* [dotnet SDK](https://www.microsoft.com/net/download/core) 2.0.0 or higher
-* [node.js](https://nodejs.org) 10.0.0 or higher
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
+- [Node.js 20 LTS](https://nodejs.org/)
 
+## Getting Started
 
-## Editor
+These commands will install the JavaScript and .NET dependencies.
+You only need to run these commands when you first start or when you update your dependencies.
 
-To write and edit your code, you can use either VS Code + [Ionide](http://ionide.io/), Emacs with [fsharp-mode](https://github.com/fsharp/emacs-fsharp-mode), [Rider](https://www.jetbrains.com/rider/) or Visual Studio.
-
-
-## Development
-
-Before doing anything, start with installing npm dependencies using `npm install`.
-
-Then to start development mode with hot module reloading, run:
-```bash
-npm start
+```pwsh
+npm install
+dotnet tool restore
+dotnet paket install
 ```
-This will start the development server after compiling the project, once it is finished, navigate to http://localhost:8080 to view the application .
 
-To build the application and make ready for production:
+## Everyday development
+
+The below command starts the development server in watch mode.
+
+```pwsh
+npm run dev
+# Note: To stop the dev server press Ctrl+C in the terminal
 ```
+
+It starts 3 processes in parallel:
+
+- [Fable](https://fable.io), the F# to JavaScript compiler, will watch your F# files and recompile them automatically into the [build](./build) directory.
+- [Tailwind CSS](https://tailwindcss.com) provides a set of utility styles. In development mode, it will watch your code and recompile the CSS files as you add more classes.
+- [Vite](https://vitejs.dev/), JavaScript build tooling and development server. It watches the build directory and reloads the pages when the JavaScript changes.
+
+By default, it will start [here](http://localhost:5173/).
+
+## Building for production
+
+The below command builds and bundles your F# and CSS into minified JavaScript in the [dist](./dist) directory.
+Any files in the [public](./public) directory are also copied to dist.
+
+```pwsh
 npm run build
 ```
-This command builds the application and puts the generated files into the `deploy` directory (can be overwritten in webpack.config.js).
 
-### Tests
+## Understanding the config files
 
-The template includes a test project that ready to go which you can either run in the browser in watch mode or run in the console using node.js and mocha. To run the tests in watch mode:
-```
-npm run test:live
-```
-This command starts a development server for the test application and makes it available at http://localhost:8085.
+The following configuration files are used to support this project:
 
-To run the tests using the command line and of course in your CI server, you have to use the mocha test runner which doesn't use the browser but instead runs the code using node.js:
-```
-npm test
-```
+- [.editorconfig](.editorconfig) Provides configuration settings for [Fantomas](https://fsprojects.github.io/fantomas/) the F# code formatter.
+- [.gitignore](.gitignore) Defines files that should be ignored by Git
+- [global.json](global.json) Defines the required version of the .NET SDK.
+- [package.json](package.json) Defines the JavaScript dependencies from [npm](https://www.npmjs.com/) and scripts started with the `npm` command.
+- [paket.dependencies](paket.dependencies) Defines the .NET dependencies from [NuGet](https://www.nuget.org/). [Paket](https://fsprojects.github.io/Paket/) centralizes version management for your .NET dependencies.
+  - Note: The [paket.lock](paket.lock) file lists the resolved dependencies.
+  - Note: Each fsproj needs a corresponding [paket.references](/src/paket.references) to select which dependencies are required for that project.
+- [tailwind.config.cjs](tailwind.config.cjs) Defines the Tailwind CSS compiler and plugin settings.
+- [tsconfig.json](tsconfig.json) Defines TypeScript compiler settings.
+- [vite.config.ts](vite.config.ts) Defines Vite's compiler and plugin settings.
+- [dotnet-tools.json](.config/dotnet-tools.json) Defines the .NET tools for this project.
