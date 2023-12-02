@@ -46,9 +46,15 @@ let homeView (model: Model) (dispatch: Msg -> unit) =
         $"""
     <div class="relative flex flex-col items-center max-w-3xl  bg-zinc-100 rounded-xl">
 
-        <div class="flex flex-row space-x-32 pt-8">
+        <div class="flex max-lg:hidden flex-row space-x-32 pt-8">
             <h1 class="text-5xl font-bold text-zinc-800 underline ">Robert Lenders</h1>
             <img class="absolute top-4 right-8" src="/images/logo.png" >
+            <img class="lg:hidden" src="/images/logo.png" >
+        </div>
+
+        <div class="flex lg:hidden flex-col items-center">
+            <h1 class="text-5xl font-bold text-zinc-800 underline py-4">Robert Lenders</h1>
+            <div><img src="/images/logo.png" ></div>
         </div>
         {CV.view model.CV (Msg.CV >> dispatch)}
     </div>
